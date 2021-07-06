@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "real-library-4fb9f": {
+      "hosting": {
+        "Library-app": [
+          "real-library-4fb9f"
+        ]
+      }
+    }
+  }
+}

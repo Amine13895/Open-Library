@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+
+    <img style="max-width: 100px" *ngIf="book.img" [src]="book.img" >
+    <button type="button" class="btn btn-danger" *ngIf="book.img" (click)="deleteImg()"> Delete Image</button>
+    <form [formGroup]="formBook" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name"> Name </label>
+        <input type="text"  class="form-control" id="name"  formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="author"> Author </label>
+        <input type="text"  class="form-control" id="author" formControlName="author">
+      </div>
+
+      <div class="form-group">
+        <label for="image"> Image </label>
+        <input type="file" id="image" (change)="detectUpload($event)"  accept="image/*" >
+        <p class="text-success" *ngIf="fileUploaded"> File Uploaded successfully</p>
+        <!input type="text"  class="form-control" id="image" formControlName="image">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="formBook.invalid " > Submit </button>
+    </form>
+    <p class="text-danger" *ngIf="!change"> Nothing has been changed </p>
+  </div>
+</div>

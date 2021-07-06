@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" routerLink="books"> Books </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" *ngIf="isAuth">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="books">Home</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="#bottom">About</a></li>
+
+        <!--
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">All Products</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+          </ul>
+        </li>  -->
+
+      </ul>
+
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" *ngIf="!isAuth">
+        <li class="nav-item"><a class="nav-link active" aria-current="page"routerLink="signup" >Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="signin">Sign In</a></li>
+      </ul>
+
+
+
+      <form class="d-flex" *ngIf="isAuth">
+        <button class="btn btn-outline-dark" type="submit" routerLink="signin" (click)="signOut()">
+          <!i class="bi-cart-fill me-1"><!/i>
+          <i class="bi bi-box-arrow-right"> </i>
+          Sign Out
+          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!--- My Navbar -->
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand" routerLink="books"> Books </a>
+  <a *ngIf="!isAuth" class="navbar-brand" routerLink="signup">SignUp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="">
+    <ul class="navbar-nav mr-auto">
+
+    <!ul class="nav justify-content-end">
+
+      <li *ngIf="!isAuth" class="nav-item ">
+      <a class="nav-link" routerLink="signin">SignIn</a>
+    </li>
+
+      <li *ngIf="isAuth" class="nav-item">
+        <a class="nav-link" routerLink="signin" (click)="signOut()" >SignOut</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+-->
